@@ -4,7 +4,7 @@
 
 **以 Rust 驅動的 AI 工作空間 — VSCode 與 Notion 的結合。**
 
----
+![](.cowork/assets/e00b449e-截圖_2026-03-24_上午10.10.54.png)---
 
 AHAwork is a desktop application built with [Tauri v2](https://v2.tauri.app/) (Rust + WebView) that combines document editing, an integrated terminal, and a flexible layout system into a single workspace. It's designed as a lightweight, secure environment for knowledge workers and developers who want AI tools at their fingertips.
 
@@ -29,6 +29,7 @@ Most AI tools today are either chat interfaces or code editors. AHAwork sits in 
 ## Features / 功能特色
 
 ### Multi-Project Workspace / 多專案工作空間
+
 Switch between multiple projects in a single window — no need to manage multiple editor instances. Each project keeps its own file tree, terminal sessions, and workspace state.
 
 在同一個視窗內切換多個專案，不需要管理多個編輯器視窗。每個專案保有獨立的檔案樹、終端機工作階段與工作空間狀態。
@@ -44,7 +45,7 @@ AHAwork uses a preview/pin model that prevents you from accidentally opening doz
 AHAwork 使用預覽/釘選模式，防止你不小心開出一堆分頁：
 
 | Action / 操作 | Result / 結果 |
-|--------|--------|
+| --- | --- |
 | **Single-click** a file / **單擊**檔案 | Opens in **preview mode** — a temporary tab (italic title) that gets replaced when you click another file / 以**預覽模式**開啟 — 暫時分頁（斜體標題），點擊其他檔案會取代它 |
 | **Double-click** a file / **雙擊**檔案 | Opens as a **pinned tab** — stays open permanently / 以**釘選分頁**開啟 — 永久保持開啟 |
 | Start editing a preview tab / 開始編輯預覽分頁 | Automatically upgrades to pinned / 自動升級為釘選分頁 |
@@ -54,6 +55,7 @@ AHAwork 使用預覽/釘選模式，防止你不小心開出一堆分頁：
 **Unsaved changes protection / 未儲存變更保護：** When closing a tab with unsaved edits (marked with ●), a dialog asks: Save / Discard / Cancel / 關閉有未儲存編輯的分頁時（標有 ●），對話框提供：儲存 / 不儲存 / 取消
 
 ### Integrated Terminal / 整合式終端機
+
 A full-featured terminal powered by xterm.js with WebGL GPU rendering.
 
 基於 xterm.js 搭配 WebGL GPU 渲染的完整終端機。
@@ -71,7 +73,7 @@ A full-featured terminal powered by xterm.js with WebGL GPU rendering.
 ### Layout Management / 佈局管理
 
 | Panel / 面板 | Description / 說明 | Toggle / 切換 |
-|------|------|--------|
+| --- | --- | --- |
 | **Sidebar / 側邊欄** | File explorer, global search, Git panel / 檔案總管、全域搜尋、Git 面板 | `⌘⇧←` |
 | **Editor area / 編輯區** | Split horizontally or vertically / 水平或垂直分割 | — |
 | **Bottom panel / 底部面板** | Terminal sessions / 終端機工作階段 | `⌘⇧↓` |
@@ -83,6 +85,7 @@ A full-featured terminal powered by xterm.js with WebGL GPU rendering.
 - Full layout persistence on restart / 重啟時完整恢復佈局
 
 ### Document Editor / 文件編輯器
+
 A Markdown editor built on [Tiptap](https://tiptap.dev/).
 
 基於 [Tiptap](https://tiptap.dev/) 的 Markdown 編輯器。
@@ -92,11 +95,13 @@ A Markdown editor built on [Tiptap](https://tiptap.dev/).
 - Split editors (horizontal / vertical) / 分割編輯器（水平 / 垂直）
 
 ### Global Search / 全域搜尋
+
 Search across all files in your workspace with real-time results, grouped by file with line-level navigation.
 
 在工作空間的所有檔案中搜尋，即時顯示結果，依檔案分組並可跳轉至指定行。
 
 ### File Watcher / 檔案監控
+
 Automatic file change detection with conflict handling:
 
 自動偵測檔案變更並處理衝突：
@@ -106,6 +111,7 @@ Automatic file change detection with conflict handling:
 - Deleted file notification banner / 已刪除檔案通知橫幅
 
 ### Git Integration / Git 整合
+
 Built-in Git support powered by `git2-rs`, accessible from the sidebar:
 
 內建 Git 支援，基於 `git2-rs`，可從側邊欄存取：
@@ -120,15 +126,15 @@ Built-in Git support powered by `git2-rs`, accessible from the sidebar:
 
 ## Keyboard Shortcuts / 鍵盤快捷鍵
 
-Press **`⌘/`** inside the app to open the keyboard shortcuts panel, which lists all available shortcuts organized by category.
+Press `⌘/` inside the app to open the keyboard shortcuts panel, which lists all available shortcuts organized by category.
 
-在應用程式內按 **`⌘/`** 開啟鍵盤快捷鍵面板，列出所有可用的快捷鍵並依類別分組顯示。
+在應用程式內按 `⌘/` 開啟鍵盤快捷鍵面板，列出所有可用的快捷鍵並依類別分組顯示。
 
 Key shortcuts / 主要快捷鍵：
 
 | Shortcut / 快捷鍵 | Action / 功能 |
-|---------|--------|
-| **`⌘/`** | **Open shortcuts panel / 開啟快捷鍵面板** |
+| --- | --- |
+| `⌘/` | **Open shortcuts panel / 開啟快捷鍵面板** |
 | `⌘S` | Save / 儲存 |
 | `⌘W` | Close tab / 關閉分頁 |
 | `⌥⌘←` `⌥⌘→` | Switch tabs / 切換分頁 |
@@ -144,7 +150,7 @@ Key shortcuts / 主要快捷鍵：
 ## Tech Stack / 技術棧
 
 | Layer / 層級 | Technology / 技術 |
-|-------|-----------|
+| --- | --- |
 | Framework / 框架 | [Tauri v2](https://v2.tauri.app/) |
 | Backend / 後端 | Rust (tokio, git2-rs, notify) |
 | Frontend / 前端 | React + TypeScript |
