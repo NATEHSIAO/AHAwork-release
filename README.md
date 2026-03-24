@@ -1,10 +1,15 @@
-# AHAwork
+# AHAwork `Preview`
 
 **A Rust-powered AI workspace — where VSCode meets Notion.**
 
 **以 Rust 驅動的 AI 工作空間 — VSCode 與 Notion 的結合。**
 
-![](.cowork/assets/e00b449e-截圖_2026-03-24_上午10.10.54.png)---
+> **⚠️ Preview Release / 先行預覽版**
+> This is an early preview of AHAwork. Core features are functional, but many more are planned. Expect frequent updates and changes.
+>
+> 這是 AHAwork 的先行預覽版。核心功能已可使用，但仍有許多功能在規劃中。預期會有頻繁的更新與變動。
+
+![](.cowork/assets/e00b449e-截圖_2026-03-24_上午10.10.54.png)\---
 
 AHAwork is a desktop application built with [Tauri v2](https://v2.tauri.app/) (Rust + WebView) that combines document editing, an integrated terminal, and a flexible layout system into a single workspace. It's designed as a lightweight, secure environment for knowledge workers and developers who want AI tools at their fingertips.
 
