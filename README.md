@@ -4,8 +4,7 @@
 
 **以 Rust 驅動的 AI 工作空間 — VSCode 與 Notion 的結合。**
 
-> **⚠️ Preview Release / 先行預覽版**
-> This is an early preview of AHAwork. Core features are functional, but many more are planned. Expect frequent updates and changes.
+> **⚠️ Preview Release / 先行預覽版**This is an early preview of AHAwork. Core features are functional, but many more are planned. Expect frequent updates and changes.
 >
 > 這是 AHAwork 的先行預覽版。核心功能已可使用，但仍有許多功能在規劃中。預期會有頻繁的更新與變動。
 

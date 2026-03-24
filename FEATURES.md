@@ -141,29 +141,15 @@ Render [Mermaid](https://mermaid.js.org/) diagrams directly inside your Markdown
 
 ### Example / 範例
 
-```mermaid
-flowchart TD
-    A[開啟 AHAwork] --> B{選擇專案}
-    B -->|新專案| C[建立新資料夾]
-    B -->|現有專案| D[開啟資料夾]
-    C --> E[開始編輯]
-    D --> E
-    E --> F{需要終端機？}
-    F -->|是| G[開啟整合式終端機]
-    F -->|否| H[繼續編輯]
-    G --> H
-    H --> I[儲存 & 提交]
-    I --> J[推送到遠端]
-```
-
-- Supports flowcharts, sequence diagrams, class diagrams, state diagrams, and more / 支援流程圖、序列圖、類別圖、狀態圖等
+![](.cowork/assets/375a38c9-截圖_2026-03-24_中午12.52.21.png)![](.cowork/assets/1368573a-截圖_2026-03-24_中午12.52.30.png)![](.cowork/assets/e9464d67-截圖_2026-03-24_中午12.52.43.png)- Supports flowcharts, sequence diagrams, class diagrams, state diagrams, and more / 支援流程圖、序列圖、類別圖、狀態圖等
 
 - Live preview while editing / 編輯時即時預覽
+
 - Export as image / 可匯出為圖片
 
 ---
 
-![](.cowork/assets/e00b449e-截圖_2026-03-24_上午10.10.54.png)## Global Search / 全域搜尋
+\## Global Search / 全域搜尋
 
 Search across all files in your workspace. Results are grouped by file with line-level navigation — click a result to jump directly to that line.
 
