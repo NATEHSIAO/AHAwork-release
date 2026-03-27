@@ -2,6 +2,54 @@
 
 ---
 
+## v0.1.18 — 2026-03-27
+
+### 更新內容
+
+**問題修復**
+- 修復 Git Push 按鈕在多 Worktree 環境下不顯示的問題
+- 修復終端機 Mutex 死鎖風險（lock ordering 統一）
+- 修復 Git Graph 在多 Worktree 間互相覆蓋的問題
+- 修復檔案櫃顯示模式（簡潔/完整）切換後未持久化的問題
+- 修復多檔案拖放到終端機只寫入單一路徑的問題
+
+**新功能**
+- 編輯器 URL 自動偵測並轉為可點擊超連結
+- 終端機內連結可點擊（外部 URL 開瀏覽器，檔案路徑在 App 內開啟）
+- Tab 拖放到終端機自動寫入檔案路徑
+- 外部檔案拖放到檔案櫃自動複製
+- Tab 切換時檔案櫃自動定位並展開對應檔案
+- 專案開啟後自動清理孤立 asset 圖片
+
+**體驗優化**
+- Git 統一 Refresh 機制（Promise.all 並行刷新）
+- 消除 Git 雙重 Polling，降低 CPU 使用
+- 檔案櫃顯示模式切換 Race Condition 防護
+
+### What's New
+
+**Bug Fixes**
+- Fixed Git Push button not appearing in multi-worktree setups
+- Fixed terminal Mutex deadlock risk (unified lock ordering)
+- Fixed Git Graph data bleeding across worktrees
+- Fixed file tree display mode not persisting across sessions
+- Fixed multi-file drag to terminal only writing single path
+
+**New Features**
+- Auto-detect and linkify URLs in the editor
+- Clickable links in terminal (URLs open browser, file paths open in app)
+- Drag tabs to terminal to write file paths
+- Drag external files to file tree to copy them into project
+- Auto-expand and scroll to active file in file tree on tab switch
+- Auto-cleanup orphaned asset images on project open
+
+**Improvements**
+- Unified Git refresh mechanism with parallel execution
+- Eliminated dual Git polling to reduce CPU usage
+- Race condition protection for file tree mode switching
+
+---
+
 ## v0.1.17 — 2026-03-25
 
 ### 更新內容
