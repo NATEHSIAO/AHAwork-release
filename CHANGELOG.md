@@ -2,6 +2,32 @@
 
 ---
 
+## v0.1.22 — 2026-03-30
+
+### 更新內容
+
+**問題修復**
+- 修復切換專案時終端機黑屏問題（Session 恢復時序修正）
+- 修復隱藏終端機持續 resize 導致行寬錯位（最小尺寸保護）
+- 修復多終端機高負載下字形亂碼（WebGL 渲染穩定性優化，context 上限管控）
+
+**新功能**
+- 歡迎頁面支援拖拉資料夾開啟專案
+- 終端機面板預設開啟
+
+### What's New
+
+**Bug Fixes**
+- Fix terminal black screen when switching projects (session restore timing)
+- Fix hidden terminal resize spam causing layout corruption (minimum size guard)
+- Fix garbled text under heavy multi-terminal load (WebGL stability, context limit)
+
+**New Features**
+- Drag-and-drop folder to open project from welcome screen
+- Terminal panel open by default
+
+---
+
 ## v0.1.21 — 2026-03-30
 
 ### 更新內容
