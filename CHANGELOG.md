@@ -2,6 +2,33 @@
 
 ---
 
+## v0.1.21 — 2026-03-30
+
+### 更新內容
+
+**新功能**
+- 終端機自訂名稱：雙擊終端機 tab 可直接重新命名，支援底部面板、tab bar 及編輯區
+- 自訂名稱保護：自訂名稱後，前景程序（如 Claude Code）的標題變更不會覆蓋自訂名稱
+
+**問題修復**
+- 修復 detached terminal（拉到編輯區）改名無效的問題
+
+**其他**
+- 更新發布腳本
+
+### What's New
+
+**New Features**
+- Custom terminal tab names: double-click any terminal tab to rename it (bottom panel, tab bar, editor area)
+- Auto-title protection: custom names persist even when foreground processes change the terminal title
+
+**Bug Fixes**
+- Fixed rename not working for terminals dragged to the editor area
+
+**Other**
+- Updated release scripts
+
+---
 ## v0.1.18 — 2026-03-27
 
 ### 更新內容
