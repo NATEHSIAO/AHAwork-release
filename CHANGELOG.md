@@ -2,6 +2,46 @@
 
 ---
 
+## v0.1.31 — 2026-04-10
+
+### 更新內容
+
+**新功能**
+- 原生 macOS 通知系統（前景 banner 顯示 + 終端機任務完成通知）
+- Deep Link 點擊通知跳轉到對應終端機
+- 完整繁體中文 / English 國際化支援
+- 分頁切換 / 專案切換後自動聚焦內容區
+- 終端機關閉一次完成 + 子進程清理（MCP 殭屍進程修復）
+- 新增檔案在選取的資料夾內建立
+- Git Stage 支援整個資料夾一次加入
+- Git Graph 只顯示 branch 名稱，隱藏 tag 標記
+- 拖曳檔案到檔案櫃空白區域移動到根目錄
+
+**問題修復**
+- 修復檔案拖曳移動成功卻顯示「移動失敗」的重複通知
+- 修復 Git Staged 區域失去樹狀結構（collapse 消解修正）
+- 修復終端機最後 session 關閉後面板未自動收合
+- 修復 UNUserNotificationCenter 在開發模式 crash 問題
+
+### What's New
+
+**New Features**
+- Native macOS notifications with foreground banner display
+- Full i18n support (Traditional Chinese / English)
+- Auto-focus content area on tab/project switch
+- One-click terminal close with process group cleanup (MCP zombie fix)
+- Create files in selected folder context
+- Git folder staging, tag-hidden graph view
+- Drag files to empty area to move to root directory
+
+**Bug Fixes**
+- Fix duplicate "move failed" toast on successful file drag
+- Fix staged changes losing tree structure
+- Fix bottom panel not collapsing after last terminal session close
+- Fix UNUserNotificationCenter crash in dev mode
+
+---
+
 ## v0.1.22 — 2026-03-30
 
 ### 更新內容
