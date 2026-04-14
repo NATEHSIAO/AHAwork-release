@@ -128,6 +128,27 @@ Built-in Git support powered by `git2-rs`, accessible from the sidebar:
 
 ---
 
+### Notifications & AI Hook Integration / 通知系統與 AI Hook 整合
+
+Get notified when long-running tasks finish — no more staring at your terminal. AHAwork registers a `cowork://` Deep Link that any CLI tool or AI assistant can trigger.
+
+執行長時任務時自動收到通知 — 不用再盯著終端機。AHAwork 註冊了 `cowork://` Deep Link，任何 CLI 工具或 AI 助手都能觸發通知。
+
+- **Three delivery modes / 三種送達方式** — macOS system banner (background / different project) or in-app toast (foreground + same project); bell badge always collects the notification / macOS 系統橫幅（背景 / 不同專案）或應用內 Toast（前景 + 同專案）；鈴鐺通知中心一律收錄
+- **One-click jump / 一鍵跳轉** — Click any notification to switch project and jump to the originating terminal tab / 點擊通知自動切換專案並跳到對應終端機
+- **Built-in Claude Code hook / 內建 Claude Code hook** — Auto-injected `COWORK_SESSION_ID` enables precise terminal matching even after reconnect / 自動注入 `COWORK_SESSION_ID`，reconnect 後仍能精確匹配
+- **Works with any tool / 相容任何工具** — Cursor, Windsurf, `cargo build`, `pnpm test` — anything that can run `open "cowork://notify?..."` / 任何能執行 `open` 指令的工具都能串接
+
+Quick example / 快速範例：
+
+```bash
+open "cowork://notify?terminal=Claude&message=單元測試全部通過"
+```
+
+**Full integration guide / 完整串接指南**：[`docs/ai-hook-notifications.md`](docs/ai-hook-notifications.md) — Claude Code `.claude/settings.json` hook 設定、Cursor / Windsurf 接法、Shell script 包裝、疑難排查。
+
+---
+
 ## Keyboard Shortcuts / 鍵盤快捷鍵
 
 Press `⌘/` inside the app to open the keyboard shortcuts panel, which lists all available shortcuts organized by category.
