@@ -79,6 +79,15 @@ This is especially useful for monitoring a long-running process (like `claude` o
 
 這在監控長時間運行的程序（如 `claude` 或開發伺服器）的同時編輯檔案時特別實用。
 
+### Custom terminal names / 自訂終端機名稱
+
+Double-click any terminal tab to rename it. Custom names persist across sessions and **override** any title changes from running processes (so your "Claude — UI work" tab won't get clobbered when the foreground process updates its title).
+
+雙擊任何終端機 tab 即可重新命名。自訂名稱會持久保存，並**覆蓋**前景程序的標題變更（你的「Claude — UI 任務」不會被前景程序的標題覆蓋）。
+
+- Works in bottom panel, tab bar, and detached editor tabs / 支援底部面板、tab bar 與拖到編輯區的分頁
+- Custom names are also used in notification titles / 自訂名稱也會用於通知標題
+
 ### Terminal-aware layout protection / 終端機感知的佈局保護
 
 Editor groups that contain a running terminal are **protected**:
@@ -95,6 +104,89 @@ Editor groups that contain a running terminal are **protected**:
 - `gh copilot` — GitHub Copilot in the terminal / 終端機版 GitHub Copilot
 - `aider` — AI pair programming / AI 配對程式設計
 - Any tool that runs in a standard terminal / 任何在標準終端機中運行的工具
+
+---
+
+## Notifications & AI Hook Integration / 通知系統與 AI Hook 整合
+
+Stop staring at your terminal waiting for builds, tests, or AI agents to finish. AHAwork sends you a notification the moment work is done — and one click jumps you straight back to the right terminal in the right project.
+
+不用再盯著終端機等建置、測試或 AI agent 完成。AHAwork 在任務結束的那一刻就會通知你 — 一鍵跳回對應專案的對應終端機。
+
+### Three smart delivery modes / 三種智慧送達方式
+
+| Situation / 情境 | Delivery / 送達方式 |
+| --- | --- |
+| App in background / App 在背景 | macOS system banner / macOS 系統橫幅 |
+| App in foreground, different project / App 在前景但不同專案 | macOS system banner / macOS 系統橫幅 |
+| App in foreground, same project / App 在前景且同專案 | In-app toast / 應用內 Toast |
+
+The bell icon in the title bar always collects every notification (with unread badge), so nothing is missed even if you dismiss the banner.
+
+標題列的鈴鐺一律收錄所有通知（含未讀 badge），即使橫幅錯過也不會漏掉。
+
+### One-click jump to the source / 一鍵跳轉到來源
+
+Click any notification — banner, toast, or bell list — and AHAwork will:
+
+點擊任何通知（橫幅、Toast 或鈴鐺清單），AHAwork 會：
+
+1. Switch to the originating project / 自動切換到來源專案
+2. Find the exact terminal session (even after reconnect) / 精準找到對應終端機（reconnect 後仍能匹配）
+3. Bring it into focus, expanding the bottom panel or editor area as needed / 自動聚焦該分頁，必要時展開底部面板或編輯區
+
+### Built-in Claude Code hook / 內建 Claude Code Hook
+
+When you launch `claude` inside an AHAwork terminal, the app auto-injects a `COWORK_SESSION_ID` env var. The provided hook script (`notify-macos.sh`) reads this and sends precise, jump-back-able notifications via Claude Code's `Stop` hook.
+
+在 AHAwork 終端機中啟動 `claude` 時，App 會自動注入 `COWORK_SESSION_ID` 環境變數。內建 hook 腳本 `notify-macos.sh` 透過 Claude Code 的 `Stop` hook 自動讀取並發送可精確跳轉的通知。
+
+```jsonc
+// .claude/settings.json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [{
+          "type": "command",
+          "command": "cat | \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/notify-macos.sh"
+        }]
+      }
+    ]
+  }
+}
+```
+
+The hook auto-extracts the last lines of Claude's reply as the notification body, skips empty acknowledgements, and falls back to `osascript` in dev environments where the Deep Link is not registered.
+
+Hook 自動擷取 Claude 回覆的尾段作為通知內容，跳過空回應；dev 環境下 Deep Link 未註冊時自動 fallback 到 `osascript`。
+
+### Works with any AI tool or CLI / 支援任何 AI 工具或 CLI
+
+Cursor, Windsurf, `pnpm test`, `cargo build`, your own scripts — anything that can run `open` triggers an AHAwork notification:
+
+Cursor、Windsurf、`pnpm test`、`cargo build`、你的腳本 — 任何能執行 `open` 的工具都能觸發通知：
+
+```bash
+# Simplest / 最簡單
+open "cowork://notify?terminal=Claude&message=測試全部通過"
+
+# Action required (warning style) / 需要處理（警告樣式）
+open "cowork://notify?terminal=Build&type=action&message=編譯失敗"
+
+# Chain with any long-running command / 串接任何長時任務
+pnpm test && open "cowork://notify?terminal=Test&message=綠燈"
+```
+
+**Full integration guide / 完整串接指南**：[`docs/ai-hook-notifications.md`](docs/ai-hook-notifications.md)
+
+### Notification center / 通知中心
+
+- Bell icon with unread badge in the title bar / 標題列鈴鐺含未讀 badge
+- Panel groups all notifications (newest first), persistent across restart / 通知面板按時間排序（最新在上），重啟後保留
+- Notification title format: `Project > Tab name` (e.g., `MyApp > 我的 Claude`) / 通知標題格式為「專案 > 分頁」
+- Capacity: up to 50, oldest read entries auto-purged / 上限 50 則，超出時自動清除最舊的已讀通知
 
 ---
 
@@ -177,6 +269,18 @@ Built-in Git support powered by Rust's `git2-rs`, accessible from the sidebar.
 - Commit history and diff viewer / 提交歷史與差異檢視器
 - Git graph visualization / Git 圖形化視覺呈現
 - Worktree support / Worktree 支援
+
+---
+
+## Internationalization / 國際化
+
+Full Traditional Chinese and English support across the entire UI — menus, dialogs, tooltips, error messages. Switch language from settings; takes effect immediately without restart.
+
+整個 UI 完整支援繁體中文與 English — 選單、對話框、Tooltip、錯誤訊息全部覆蓋。從設定切換語言，即時生效，無需重啟。
+
+- Auto-detects system language on first launch / 首次啟動自動偵測系統語言
+- Per-user preference saved across restarts / 偏好設定持久保存
+- More languages planned / 規劃支援更多語言
 
 ---
 
