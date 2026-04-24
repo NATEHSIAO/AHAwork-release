@@ -149,6 +149,26 @@ open "cowork://notify?terminal=Claude&message=單元測試全部通過"
 
 **Full integration guide / 完整串接指南**：[`docs/ai-hook-notifications.md`](docs/ai-hook-notifications.md) — Claude Code `.claude/settings.json` hook 設定、Cursor / Windsurf 接法、Shell script 包裝、疑難排查。
 
+### Auto Update / 自動更新
+
+AHAwork checks for updates automatically on startup. When a new version is available, a notification appears with options to update now, remind later, or skip.
+
+AHAwork 在啟動時自動檢查更新。有新版本時會顯示通知，可選擇立即更新、稍後提醒或跳過此版本。
+
+- **One-click update / 一鍵更新** — Download and install without leaving the app. Restart to complete / 在應用內直接下載安裝，重啟即完成更新
+- **Manual check / 手動檢查** — Help → Check for Updates anytime / 隨時從 Help → 檢查更新手動觸發
+- **Version history / 版本歷史** — Help → Version Info to browse all past release notes / Help → 版本資訊瀏覽所有歷史更新記錄
+
+### Bug Report / 問題回報
+
+Found a bug? Report it directly from the app — no need to open GitHub manually.
+
+發現問題？直接從應用內回報，不需要手動開 GitHub Issue。
+
+- **Help → Report a Problem / Help → 回報問題** — Fill in a simple form with title and description / 填寫簡單的標題和描述表單
+- **Auto-collected diagnostics / 自動收集診斷資訊** — App version, OS, memory usage, and recent error logs are attached automatically / 自動附加版本號、作業系統、記憶體使用和近期錯誤記錄
+- **Submitted as GitHub Issue / 提交為 GitHub Issue** — Your report goes directly to our issue tracker for follow-up / 回報直接進入我們的 Issue 追蹤系統
+
 ---
 
 ## Keyboard Shortcuts / 鍵盤快捷鍵
