@@ -1,5 +1,7 @@
 # AHAwork `Preview`
 
+🌐 **[ahawork 官網 / Official Website](https://www.qualiaspark.cc/ahawork)**
+
 **A Rust-powered AI workspace — where VSCode meets Notion.**
 
 **以 Rust 驅動的 AI 工作空間 — VSCode 與 Notion 的結合。**
