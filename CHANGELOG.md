@@ -2,6 +2,20 @@
 
 ---
 
+## v0.1.36 — 2026-05-08
+
+### 新功能
+- DOCX / PPTX 文件預覽 — 在 app 內直接預覽 Word 和 PowerPoint 文件
+  - DOCX: 標題顏色、項目符號、表格、底色框正確顯示
+  - PPTX: 應用內全螢幕、滾輪/觸控板縮放、即時更新追蹤頁碼
+- Markdown 編輯器區塊巢狀結構與拖曳排序 — 支援多層巢狀清單與跨層級區塊拖曳
+
+### What's New
+- Preview DOCX and PPTX files directly in AHAwork (headings, bullets, tables, shaded blocks; PPTX in-app fullscreen, scroll-to-zoom, live page tracking)
+- Nested blocks and drag-and-drop reordering in the Markdown editor
+
+---
+
 ## v0.1.35 — 2026-05-01
 
 ### 新功能
