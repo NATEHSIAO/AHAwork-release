@@ -2,6 +2,32 @@
 
 ---
 
+## v0.1.37 — 2026-05-11
+
+### 問題修復
+- 修復「拖檔案到終端機沒按 Shift 卻被貼路徑」的問題 — 現在從 Finder、側邊欄、編輯器分頁三種來源拖曳行為都一致，沒按 Shift 不會誤貼路徑到 Claude Code 對話框
+- 優化終端機渲染邏輯，徹底解決 Claude Code 等 TUI 程式畫面亂碼破版問題
+
+### 新功能（小）
+- 終端機新增「重新渲染」按鈕（工具列），快捷鍵 `Cmd+Alt+R` — TUI 程式畫面壞掉時不需殺進程，按一下強制重畫
+
+### 體驗優化
+- 分頁群組首項是終端機時，自動隱藏無意義的「上一頁/下一頁」按鈕
+
+### What's New
+- Fixed "files dropped on terminal getting pasted as paths without Shift" — now consistent across Finder, sidebar, and tab drags
+- Optimized terminal rendering — fully resolves garbled output / layout breakage in TUI apps like Claude Code
+- Terminal "Redraw" button (toolbar) and `Cmd+Alt+R` shortcut to force a redraw without killing the process
+- Auto-hide prev/next nav icons when the first item in a tab group is a terminal
+
+### Technical Notes (內部追蹤)
+- 內部版本號：v0.1.9.1.f
+- 拖曳系統重構：DropRouter 集中入口 + GlobalModifierState 統一 Shift 來源 + Fail-safe 預設
+- ESLint `no-restricted-imports` rule 強制保護未來不再回歸
+- 68 個新增測試（單元 44 + ATDD 24）/ typecheck 0 errors / 0 新 regression
+
+---
+
 ## v0.1.36 — 2026-05-08
 
 ### 新功能
