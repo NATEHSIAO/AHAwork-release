@@ -1,4 +1,6 @@
-# AHAwork `Preview` — Feature Overview / 功能總覽
+# 
+
+![](.cowork/assets/ffa63300-截圖_2026-03-28_下午4.46.33.png)# AHAwork `Preview` — Feature Overview / 功能總覽
 
 ---
 
@@ -17,6 +19,23 @@ Work on multiple projects in a single window. No need to open separate editor in
 **Why this matters:** Traditional editors like VSCode require a separate window per project. AHAwork keeps everything in one place.
 
 **為什麼重要：** 傳統編輯器如 VSCode 每個專案需要獨立視窗。AHAwork 將一切集中在同一處。
+
+---
+
+## Full-Screen Expand Mode / 全文件展開模式
+
+Focus on one thing at a time. Click the expand button on any tab group to blow the current document — or terminal — up to fill the entire workspace, with only the file tree kept on the left. Click again to collapse back to your previous layout.
+
+專注在一件事上。點擊任一分頁群組的展開按鈕，把目前的文件（或終端機）放大到佔滿整個工作區，只保留左側檔案櫃。再按一下即可收回原本的版面。
+
+- Works for every file type — Markdown, code, PDF, spreadsheets, and terminals / 支援所有文件類型 — Markdown、程式碼、PDF、試算表、終端機
+- File tree stays visible so you can still navigate / 保留左側檔案櫃，仍可瀏覽切換
+- One at a time, distraction-free / 一次專注一個，無干擾
+- Restores your previous layout, scroll position, and cursor on exit / 退出後恢復原本版面、捲動位置與游標
+
+**Why this matters:** Like VS Code's Zen Mode, but it works for terminals too — perfect for reading long documents or watching a Claude Code session full-screen.
+
+**為什麼重要：** 類似 VS Code 的 Zen Mode，但連終端機也適用 — 適合閱讀長文件，或全螢幕盯著 Claude Code 跑。
 
 ---
 
@@ -233,7 +252,7 @@ Render [Mermaid](https://mermaid.js.org/) diagrams directly inside your Markdown
 
 ### Example / 範例
 
-![](.cowork/assets/375a38c9-截圖_2026-03-24_中午12.52.21.png)![](.cowork/assets/1368573a-截圖_2026-03-24_中午12.52.30.png)![](.cowork/assets/e9464d67-截圖_2026-03-24_中午12.52.43.png)- Supports flowcharts, sequence diagrams, class diagrams, state diagrams, and more / 支援流程圖、序列圖、類別圖、狀態圖等
+![](.cowork/assets/375a38c9-截圖_2026-03-24_中午12.52.21.png)![](.cowork/assets/1368573a-截圖_2026-03-24_中午12.52.30.png)![](.cowork/assets/e9464d67-截圖_2026-03-24_中午12.52.43.png)\- Supports flowcharts, sequence diagrams, class diagrams, state diagrams, and more / 支援流程圖、序列圖、類別圖、狀態圖等
 
 - Live preview while editing / 編輯時即時預覽
 

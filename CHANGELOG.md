@@ -2,6 +2,46 @@
 
 ---
 
+## v0.1.39 — 2026-06-01
+
+### 新功能
+- **全文件展開模式** — 分頁群組右上角新增展開按鈕，一鍵把目前的文件或終端機放大到佔滿整個工作區（保留左側檔案櫃），專注閱讀或編輯；再按一下即可收回。支援所有文件類型，包含終端機。
+
+### 問題修復
+- 修復長時間使用後終端機區域整個變黑（黑屏）的問題 — 現在會自動偵測畫面失效並重建，不需重開 App
+- 修復終端機長時間無回應時，背景或待機狀態下誤跳「終端機無回應」通知的問題
+- 修復圖片拖曳到終端機（給 Claude Code）有時被擋住、無法插入檔案路徑的問題
+- 修復在編輯器貼上 / 拖曳圖片時，偶爾被存到錯誤專案資料夾的問題 — 圖片現在只會存到目前開啟的專案
+- 修復中文打到一半、切去終端機拉檔案後再繼續輸入，文字會變成散開注音的問題
+- 修復把群組裡最後一個終端機分頁拖到其他群組時，終端機被意外關閉的問題
+
+### 體驗優化
+- Markdown 編輯器貼上 Markdown 文字時自動辨識並轉成排版後的樣子，不再原樣貼成純文字
+- 沒有副檔名或特殊檔名的檔案（如 `.env.local`、`Dockerfile`、`Makefile`）現在可以直接開啟編輯
+- 開啟大量終端機分頁時的資源管理優化 — 背景分頁自動休眠、切回時自動喚醒，長時間使用更穩定
+- 終端機長時間無回應時，提供系統通知與一鍵恢復
+
+### What's New
+- **Full-screen expand mode** — a new expand button on each tab group blows the current document or terminal up to fill the whole workspace (file tree stays); click again to collapse. Works for every file type, including terminals.
+- Fixed the terminal area going fully black after long sessions — failed canvases are now detected and rebuilt automatically, no restart needed
+- Fixed false "terminal not responding" notifications while the app was in the background or idle
+- Fixed images dropped onto the terminal (for Claude Code) sometimes being blocked instead of inserting the file path
+- Fixed pasted/dropped images occasionally landing in the wrong project folder — images now always save to the currently open project
+- Fixed Chinese IME input breaking into loose phonetic symbols after dragging a file into the terminal mid-composition
+- Fixed the last terminal tab in a group being accidentally closed when dragged to another group
+- Pasted Markdown is now auto-detected and rendered instead of staying as plain text
+- Files with no or unusual extensions (`.env.local`, `Dockerfile`, `Makefile`…) are now editable
+- Smarter resource handling with many terminal tabs — background tabs sleep and wake automatically
+
+### Technical Notes (內部追蹤)
+- 涵蓋內部版本：v0.1.9.2 ~ v0.1.9.4
+- v0.1.9.2：Asset 儲存與 Workspace 註冊重構（workspace_registry 白名單 + drop/paste guard，杜絕跨專案污染）
+- v0.1.9.3：Prod 終端機區 hotfix（LRU canvas 待機 + Canvas watchdog + Rust heartbeat + Channel cleanup 公開 API + pool 累積根因修 + deep-link reload-webview）
+- v0.1.9.4：6 bug 修復（heartbeat is_visible / image→terminal DropRouter 短路 / Tiptap transformPastedText / DocumentFactory 預設 MonacoAdapter / IME blur+rAF focus 重建 / disposeGroup 跨 group stillReferenced 防護）+ 全文件展開模式（store-driven expandedSourceGroupId）
+- Rust 126/126；TS 0 新 regression
+
+---
+
 ## v0.1.37 — 2026-05-11
 
 ### 問題修復
