@@ -2,6 +2,32 @@
 
 ---
 
+## v0.1.40 — 2026-06-08
+
+### 新功能
+- **複製為 Markdown** — 在 Markdown 文件選取文字後，可選擇「複製純文字」或「複製 Markdown 格式」，方便把內容帶到 GitHub、其他工具或 AI。
+- **右鍵選單跟隨介面語言** — macOS 原生右鍵選單（複製/查詢/翻譯…）會跟著 App 介面語言切換（重啟後生效）。
+
+### 問題修復
+- 修復終端機在展開/收合、或重新開啟 App 還原先前終端機時，畫面出現重複內容或殘影的問題
+- 修復中文輸入時選字框消失或閃爍的問題（包含 AI 回應進行中打字、輸入特定字、連續輸入同一鍵）
+- 修復終端機中文輸入的多項問題（注音連打、拖檔後繼續輸入、組字顯示）
+- 統一檔案／圖片拖放到編輯器與終端機的行為，更符合預期
+
+### 體驗優化
+- 終端機整體穩定性提升
+- 中文組字框顯示更貼合內容，並支援超出寬度時自動換行
+
+### What's New
+- **Copy as Markdown** — select text in Markdown docs and copy as plain text or Markdown.
+- **Native context menu follows app language** (macOS, after restart).
+- Fixed terminal duplicate/ghost rendering on expand/collapse and when restoring terminals at startup.
+- Fixed Chinese IME candidate window disappearing/flickering while typing (including during AI streaming and for certain characters).
+- Unified file/image drag-and-drop behavior across editor and terminal.
+- Terminal stability improvements; IME composition box now fits content and wraps.
+
+---
+
 ## v0.1.39 — 2026-06-01
 
 ### 新功能
