@@ -2,6 +2,25 @@
 
 ---
 
+## v0.1.41 — 2026-06-12
+
+### 全新功能：跨專案終端機工作區
+- **終端機總覽** — 一個面板看完所有專案正在跑的終端機，運行中／已讀未讀一眼分辨
+- **隨手附加** — 把圖片、文件分頁或檔案櫃裡的檔案直接拖進終端機，自動帶入路徑
+- **內建文件區與檔案櫃** — 在終端機工作區裡就能開檔案、看專案檔案櫃，邊跑指令邊看文件
+- **文件分頁** — 單擊預覽、雙擊釘選常駐，也能直接開成新分頁
+- **完整中文輸入** — 終端機支援注音／中文輸入法選字，Shift+Enter 換行
+- **一鍵跳回** — 右鍵終端機即可跳回它所屬的專案工作區
+
+### What's New
+- **Cross-Project Terminal Workspace** — see and control every project's terminals in one place.
+- Drag images, tabs, or files straight into a terminal to insert their paths.
+- Browse the file cabinet and open documents without leaving the workspace; preview on single-click, pin on double-click.
+- Full Chinese IME input (with Shift+Enter for newlines).
+- Jump back to any terminal's project workspace with a single right-click.
+
+---
+
 ## v0.1.40 — 2026-06-08
 
 ### 新功能
