@@ -2,6 +2,29 @@
 
 ---
 
+## v0.1.42 — 2026-06-18
+
+### 新功能
+- **設定中心** — 應用選單可開啟設定（Cmd+,），可調整終端機編譯資源用量，避免多個終端機同時編譯把電腦吃滿、導致卡頓或打字延遲
+
+### 問題修復
+- 修復在終端機工作區開啟的文件，被 AI 或終端機指令改動後不會自動更新、且可能與手動編輯互相覆蓋導致內容遺失的問題
+- 修復中文輸入時終端機選字框異常（組字中斷、未選字就送出）的問題
+- 修復終端機未讀提示不準確的問題
+- 修復終端機改名與殘留「殭屍」終端機的問題
+
+### 體驗優化
+- 終端機工作區縮放與捲動體驗優化
+
+### What's New
+- **Settings center** (Cmd+,) with terminal build-resource controls to prevent system slowdowns when multiple terminals compile at once
+- Files opened in the terminal workspace now auto-refresh when changed by AI or shell commands, and no longer get overwritten by concurrent manual edits
+- Fixed Chinese IME candidate-window issues in the terminal
+- Fixed terminal unread indicators, rename, and zombie-terminal cleanup
+- Smoother terminal workspace zoom and scrolling
+
+---
+
 ## v0.1.41 — 2026-06-12
 
 ### 全新功能：跨專案終端機工作區
