@@ -2,6 +2,22 @@
 
 ---
 
+## v0.1.43 — 2026-06-21
+
+### 更新內容
+- **效能優化** — 終端機冷啟動與切換更快更順
+- **睡眠/喚醒邏輯優化** — 背景執行的終端機不再卡住，喚醒後不再空白或亂碼，也修正了首次開啟/切換時畫面寬度算錯、文字重疊的問題
+- **狀態與排序邏輯優化** — 終端機列表的狀態時間與排序更穩定一致，關閉重開或重啟後排序不重置
+- **新增** — 終端機卡片一鍵隱藏（免右鍵）
+
+### What's New
+- **Performance** — faster terminal cold-start & switching
+- **Sleep/wake logic** — background terminals no longer freeze; no more blank/garbled screen on wake; fixed terminal width miscalculation & text ghosting on first open/switch
+- **State & ordering** — stable terminal list state time & ordering, persisted across reopen/restart
+- **New** — one-click hide on terminal cards
+
+---
+
 ## v0.1.42 — 2026-06-18
 
 ### 新功能
