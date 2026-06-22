@@ -2,6 +2,18 @@
 
 ---
 
+## v0.1.44 — 2026-06-22
+
+### 體驗優化
+- **長時間運行效能與穩定性優化** — 長時間在背景運行後，畫面不再卡住或變黑，能自動恢復
+- **介面佈局優化** — 多專案切換時，側邊檔案櫃寬度維持正常，不再異常變寬
+
+### What's New
+- **Long-running stability & performance** — recovers automatically; no more frozen/blank screen after long background runs
+- **UI layout** — side file drawer keeps a consistent width when switching across projects
+
+---
+
 ## v0.1.43 — 2026-06-21
 
 ### 更新內容
